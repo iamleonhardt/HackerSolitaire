@@ -44,6 +44,9 @@ button {
     font-size: 40px;
     font-family: arial, sans-serif;
     position: absolute;
+    border: 1px;
+    border-style: solid;
+    border-color: darkslategrey;
 
 }
 

@@ -40,7 +40,7 @@ function createPiles(){
             ranNum = Math.floor((Math.random() * cardArrLength));
             cardsInPileArr.push(cardArr[ranNum]);
             var $cardDiv = $('<div>', {id: 'pile0' + i, class: 'card', style: 'top: '+ adjustedPosition + 'px;'}).text(cardArr[ranNum]);
-            adjustedPosition += 40;
+            adjustedPosition += 20;
             $('#pile0'+i).append($cardDiv);
         }
 
