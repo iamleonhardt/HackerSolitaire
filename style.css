@@ -5,14 +5,16 @@ body {
     padding: 0;
 }
 
-#settings {
-    width: 100vw;
-    height: 8vh;
-}
+/*#settings {*/
+    /*width: 100vw;*/
+    /*height: 8vh;*/
+/*}*/
 
 #gameArea {
     width: 100vw;
-    height: 92vh;
+    height: 100vh;
+    background-image: url('images/bg04.jpg');
+    background-size: cover;
 }
 
 input {
@@ -29,9 +31,9 @@ button {
 }
 
 .pile {
-    height: 100%;
+    height: 88%;
     width: 100px;
-    margin: 0 auto;
+    margin: 5% auto;
     display: inline-block;
     position:relative;
 }
@@ -39,17 +41,29 @@ button {
 .card {
     height: 120px;
     width: 80px;
-    background-color: aquamarine;
     display: inline-block;
-    font-size: 40px;
+    font-size: 60px;
     font-family: arial, sans-serif;
     position: absolute;
-    border: 1px;
-    border-style: solid;
-    border-color: darkslategrey;
+    /*border: 1px solid lightgrey;*/
+    color: #FFFFE3;
+    line-height: 120px;
 
 }
 
-div:nth-child(odd) .card  {
-    background-color: aqua;
+.attack {
+    background-color: #111111;
 }
+
+.defense {
+    background-color: #333333;
+}
+
+.agility {
+    background-color: #666666;
+}
+
+.willpower{
+    background-color: #999999;
+}
+
