@@ -50,10 +50,20 @@ body {
     left: 0;
 }
 
+
+
+
 /* Player Section */
 #playerArea{
+    position: absolute;
+    bottom:0;
     width: 100%;
-    height: 50%;
+    height: 20%;
+}
+
+
+#theCard, #theDeck {
+    margin: 0 20px;
 }
 
 #theCard {
@@ -63,6 +73,9 @@ body {
 #theDeck {
     background-color: deepskyblue;
 }
+
+
+
 
 /* Energy Types */
 .attack {

@@ -11,9 +11,15 @@ var energyArr = ['attack', 'defense', 'agility', 'willpower'];
 
 var cardArrLength = cardArr.length;
 
+var randomCard;
+
 $(document).ready(function(){
+    console.log("doc is ready");
     createPiles();
-})
+    makeRandomCard();
+    $("#theDeck").click(makeRandomCard);
+
+});
 
 function createPiles(){
     var $pileDiv;
@@ -44,5 +50,10 @@ function createPiles(){
         cardsInPileArr = [];
 
     }
+}
+function makeRandomCard() {
+    randomCard = Math.floor((Math.random() * cardArr.length));
+    console.log("The card is " + randomCard);
+
 }
 
