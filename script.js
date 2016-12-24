@@ -6,10 +6,8 @@ var cardPiles = [];
 var cardsInPileArr = [];
 var adjustedPosition = 0;
 
-var cardArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '(', ')', '{', '}'];
+var cardArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '(', ')', '{', '}'];
 var energyArr = ['attack', 'defense', 'agility', 'willpower'];
-
-var cardArrLength = cardArr.length;
 
 var randomCard;
 
@@ -17,9 +15,14 @@ $(document).ready(function(){
     console.log("doc is ready");
     createPiles();
     makeRandomCard();
-    $("#theDeck").click(makeRandomCard);
+    $('#theDeck').click(makeRandomCard);
 
 });
+
+function makeRandomNum (maxNum) {
+    return Math.floor((Math.random() * maxNum));
+}
+
 
 function createPiles(){
     var $pileDiv;
@@ -32,7 +35,7 @@ function createPiles(){
 
         //create cards in each pile
         for(var j = 0; j < maxCardsInPile; j++){
-            ranNum = Math.floor((Math.random() * cardArrLength));
+            ranNum = makeRandomNum(cardArr.length);
             cardsInPileArr.push(cardArr[ranNum]);
             //assign energy to card
             var energyAssigned = energyArr[Math.floor(Math.random() * energyArr.length)];
@@ -52,8 +55,8 @@ function createPiles(){
     }
 }
 function makeRandomCard() {
-    randomCard = Math.floor((Math.random() * cardArr.length));
-    console.log("The card is " + randomCard);
-
+   var theNum = makeRandomNum(cardArr.length);
+ console.log(theNum);
+$("#theCard").text(cardArr[theNum]);
 }
 
