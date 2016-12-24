@@ -6,14 +6,23 @@ var cardPiles = [];
 var cardsInPileArr = [];
 var adjustedPosition = 0;
 
+//resources
+var attackPool = 2;
+var defensePool = 8;
+var agilityPool = 5;
+var willpowerPool = 6;
+
 var cardArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '(', ')', '{', '}'];
 var energyArr = ['attack', 'defense', 'agility', 'willpower'];
 
 var cardArrLength = cardArr.length;
 
+
 $(document).ready(function(){
     createPiles();
+    updateResourceDisplay();
 })
+
 
 function createPiles(){
     var $pileDiv;
@@ -42,6 +51,18 @@ function createPiles(){
         console.log('cardPiles is : ', cardPiles);
         //Clear cardsInPileArr
         cardsInPileArr = [];
+
+    }
+}
+
+function updateResourceDisplay(){
+
+
+    for(var i = 0; i < energyArr.length; i++){
+
+        var energyDiv = $('<div>', {class: 'resourceMeters ' + energyArr[i], id: energyArr[i] + 'Meter'}).text(energyArr[i] + 'pool')
+        //create div
+        $('resourceMeterContainer').append();
 
     }
 }

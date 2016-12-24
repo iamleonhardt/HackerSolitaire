@@ -64,7 +64,36 @@ body {
     background-color: deepskyblue;
 }
 
-/* Energy Types */
+/* Resource Meters */
+
+.resourceMeters {
+    height: 120px;
+    width: 30px;
+    margin: 0 10px;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+}
+
+#attackMeter {
+
+}
+
+#defenseMeter {
+
+}
+
+#agilityMeter {
+
+}
+
+#willpowerMeter {
+
+}
+
+
+/* Resource Types */
 .attack {
     background-color: #111111;
 }
@@ -80,4 +109,5 @@ body {
 .willpower{
     background-color: #999999;
 }
+
 
