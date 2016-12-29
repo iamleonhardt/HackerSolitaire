@@ -17,7 +17,6 @@ $(document).ready(function(){
     console.log("doc is ready");
     createPiles();
     makeRandomCard();
-
     $('#theDeck').click(makeRandomCard);
 
 });
@@ -67,11 +66,16 @@ function makeRandomCard() {
 
 // when card is clicked, compare clicked card to theCard
 function compareCards() {
+var self = this;
+    console.log('this is : ', this);
+    console.log('self is : ', self);
+
+
     // get text of clicked card
-    var clickedCardText= $(this).text();
+    var clickedCardText = $(this).text();
     var clickedCardIndex = cardArr.indexOf(clickedCardText);
     var theCardValIndex = cardArr.indexOf(theCardVal);
-    // console.log('clickedCardText is : ', clickedCardText);
+    console.log('clickedCardText is : ', clickedCardText);
     // console.log('theCardVal is : ', theCardVal);
     // console.log('clickedCardIndex is : ', clickedCardIndex);
     // console.log('cardValIndex is : ', theCardValIndex);
@@ -80,7 +84,8 @@ function compareCards() {
 if (theCardValIndex == 0){
     console.log('the card is in the 0th position');
     if(clickedCardIndex == (cardArr.length -1) ||  clickedCardIndex == (theCardValIndex + 1) ){
-        console.log('its a match');
+
+        itsAMatch(clickedCardText, self)
     }
     else {
         notAMatch();
@@ -92,7 +97,7 @@ if (theCardValIndex == 0){
 else if (theCardValIndex == (cardArr.length - 1)){
     console.log('the card is in the last index position');
     if(clickedCardIndex == (theCardValIndex - 1) ||  clickedCardIndex == 0){
-           console.log('its a match');
+        itsAMatch(clickedCardText, self);
     }
     else {
         notAMatch();
@@ -105,7 +110,7 @@ else if (theCardValIndex == (cardArr.length - 1)){
     else if (clickedCardIndex == (theCardValIndex - 1) ||  clickedCardIndex == (theCardValIndex + 1) )
     //if it is, then delete clicked card and show the card behind it then make theCard the clicked card's value
     {
-        console.log('It did match');
+        itsAMatch(clickedCardText, self);
     }
     //if not, then do nothing and play sound
     else{
@@ -114,7 +119,19 @@ else if (theCardValIndex == (cardArr.length - 1)){
 }
 
 
+function itsAMatch (clickedCardText, self){
+    console.log('its a match');
+    //delete clicked card
+    $(self).remove();
+    console.log('this is : ', this);
 
+    //replace the card with clicked card
+    $('#theCard').text(clickedCardText);
+    theCardVal = clickedCardText;
+    //play audio sound
+    var audio = new Audio('tada.wav');
+    audio.play();
+}
 function notAMatch (){
     console.log('It did not match');
         var audio = new Audio('no.mp3');
