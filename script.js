@@ -7,7 +7,7 @@ var cardsInPileArr = [];
 var adjustedPosition = 0;
 
 // var cardArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '(', ')', '{', '}'];
-var cardArr = [1, 2, 3, 4];
+var cardArr = ['1', '2', '3', '4'];
 var energyArr = ['attack', 'defense', 'agility', 'willpower'];
 
 var randomCard;
@@ -52,7 +52,7 @@ function createPiles(){
 
         //push cardsInPileArr into cardPiles
         cardPiles.push(cardsInPileArr);
-        console.log('cardPiles is : ', cardPiles);
+        // console.log('cardPiles is : ', cardPiles);
         //Clear cardsInPileArr
         cardsInPileArr = [];
 
@@ -69,19 +69,54 @@ function makeRandomCard() {
 function compareCards() {
     // get text of clicked card
     var clickedCardText= $(this).text();
-    console.log('clickedCardText is : ', clickedCardText);
-    console.log('theCardVal is : ', theCardVal);
-    //get text of theCard
-    //compare to see if clicked card is 1 higher or lower than theCard
-    if(clickedCardText == (theCardVal - 1) ||  clickedCardText == (theCardVal + 1) )
+    var clickedCardIndex = cardArr.indexOf(clickedCardText);
+    var theCardValIndex = cardArr.indexOf(theCardVal);
+    // console.log('clickedCardText is : ', clickedCardText);
+    // console.log('theCardVal is : ', theCardVal);
+    // console.log('clickedCardIndex is : ', clickedCardIndex);
+    // console.log('cardValIndex is : ', theCardValIndex);
+
+// check if theCard is at 0 index pos
+if (theCardValIndex == 0){
+    console.log('the card is in the 0th position');
+    if(clickedCardIndex == (cardArr.length -1) ||  clickedCardIndex == (theCardValIndex + 1) ){
+        console.log('its a match');
+    }
+    else {
+        notAMatch();
+
+    }
+}
+
+// check if theCard is at the end of the array
+else if (theCardValIndex == (cardArr.length - 1)){
+    console.log('the card is in the last index position');
+    if(clickedCardIndex == (theCardValIndex - 1) ||  clickedCardIndex == 0){
+           console.log('its a match');
+    }
+    else {
+        notAMatch();
+
+    }
+}
+
+    //get index position of theCard
+    //compare to see if clicked card is 1 higher or lower index position than theCard
+    else if (clickedCardIndex == (theCardValIndex - 1) ||  clickedCardIndex == (theCardValIndex + 1) )
     //if it is, then delete clicked card and show the card behind it then make theCard the clicked card's value
     {
         console.log('It did match');
     }
     //if not, then do nothing and play sound
     else{
-        console.log('It did not match');
+        notAMatch();
+    }
+}
+
+
+
+function notAMatch (){
+    console.log('It did not match');
         var audio = new Audio('no.mp3');
         audio.play();
-    }
 }
