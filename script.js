@@ -81,6 +81,8 @@ function drawCard() {
     theCardVal = cardArr[theNum];
     $("#theCard").text(cardArr[theNum]);
 
+    var audio = new Audio('sounds/drawCard.mp3');
+    audio.play();
     //todo add sound when player draws a card
 }
 
@@ -139,7 +141,7 @@ function itsAMatch (clickedCardText, self){
     theCardVal = clickedCardText;
 
     //play audio sound
-    var audio = new Audio('sounds/tada.wav');
+    var audio = new Audio('sounds/cardMatched.mp3');
     audio.play();
 
     //todo Check for win (all cards are gone)
@@ -159,7 +161,7 @@ function updateResourceDisplay(){
  */
 function notAMatch (){
     console.log('It did not match');
-    var audio = new Audio('sounds/no.mp3');
+    var audio = new Audio('sounds/error.mp3');
     audio.play();
 }
 
@@ -171,7 +173,83 @@ function displayWinner (){
 }
 
 
-//todo find better sounds for theme
 //todo fix theCard dom element
 //todo size game for mobile
 
+
+
+
+var boyName = 'simon';
+
+var petArr = [
+    'dog',
+    'cat',
+    'mouse',
+    'turtle',
+    'bunny'
+];
+
+//
+// var dog1 = {
+//     name: 'Mister Mc Fluffy Pants',
+//     furColor: 'brown',
+//     speak: function(){
+//         console.log('bow wow');
+//     },
+//     poop: function(){
+//         console.log('I pooped out jelly beans');
+//     }
+// };
+//
+//
+// var dog2 = {
+//     name: 'Ima Dog',
+//     furColor: 'brown',
+//     speak: function(){
+//         console.log('bow wow');
+//     },
+//     poop: function(){
+//         console.log('I pooped out jelly beans');
+//     }
+// };
+//
+//
+// var dog3 = {
+//     name: 'Imalso adog',
+//     furColor: 'black',
+//     speak: function(){
+//         console.log('bow wow');
+//     },
+//     poop: function(){
+//         console.log('I pooped out jelly beans');
+//     }
+// };
+
+
+
+function Dog (name){
+    this.name = name;
+    this.speak = function(){
+        console.log('bow wow');
+    };
+    this.poop = function(){
+        console.log('I pooped out jelly beans');
+    };
+    this.sniff = function(target){
+        // console.log('sniff');
+        console.log(this.name + ' sniffed ' + target + "\'s butt.");
+    };
+}
+
+var dogArr = ['Ima Dog', 'Snoop', 'Fluffers', 'Smucky smuch', 'Dogey Doge', 'Rex Kwon Doge'];
+
+for (var i = 0; i < dogArr.length; i++){
+    var thisDog = dogArr[i];
+    var thisDog = new Dog(dogArr[i])
+}
+
+
+//
+// var dog1 = new Dog('Ima Dog', 'Blurple');
+// var dog2 = new Dog('Doge', 'Unicornicopia');
+// var dog3 = new Dog('Snoop', 'Black');
