@@ -6,6 +6,12 @@ var cardPiles = [];
 var cardsInPileArr = [];
 var adjustedPosition = 0;
 
+//resources
+var attackPool = 2;
+var defensePool = 8;
+var agilityPool = 5;
+var willpowerPool = 6;
+
 // var cardArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '(', ')', '{', '}'];
 var cardArr = ['1', '2', '3', '4'];
 var energyArr = ['attack', 'defense', 'agility', 'willpower'];
@@ -20,6 +26,8 @@ $(document).ready(function(){
     createPiles();
     $('#theDeck').click(drawCard);
     drawCard();
+    updateResourceDisplay();
+
 });
 
 /**
@@ -34,6 +42,7 @@ function makeRandomNum (maxNum) {
 /**
  * Creates piles of cards
  */
+//todo Make only the top card click-able
 function createPiles(){
     var $pileDiv;
 
@@ -130,18 +139,27 @@ function itsAMatch (clickedCardText, self){
     theCardVal = clickedCardText;
 
     //play audio sound
-    var audio = new Audio('tada.wav');
+    var audio = new Audio('sounds/tada.wav');
     audio.play();
 
     //todo Check for win (all cards are gone)
 }
 
+function updateResourceDisplay(){
+    for(var i = 0; i < energyArr.length; i++){
+
+        var energyDiv = $('<div>', {class: 'resourceMeters ' + energyArr[i], id: energyArr[i] + 'Meter'}).text(energyArr[i] + 'pool')
+        //create div
+        $('resourceMeterContainer').append();
+
+    }
+}
 /**
  * If its not a match, play audio
  */
 function notAMatch (){
     console.log('It did not match');
-    var audio = new Audio('no.mp3');
+    var audio = new Audio('sounds/no.mp3');
     audio.play();
 }
 
@@ -156,6 +174,4 @@ function displayWinner (){
 //todo find better sounds for theme
 //todo fix theCard dom element
 //todo size game for mobile
-
-
 
