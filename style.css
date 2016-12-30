@@ -65,6 +65,10 @@ body {
 }
 
 /* Resource Meters */
+#resourceMeterContainer {
+    display:inline-block;
+    font-size: 0px;
+}
 
 .resourceMeters {
     height: 120px;
@@ -94,6 +98,7 @@ body {
 
 
 /* Resource Types */
+
 .attack {
     background-color: #111111;
 }
