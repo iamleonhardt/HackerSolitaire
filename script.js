@@ -34,6 +34,7 @@ function makeRandomNum (maxNum) {
 /**
  * Creates piles of cards
  */
+//todo Make only the top card click-able
 function createPiles(){
     var $pileDiv;
 
@@ -130,7 +131,7 @@ function itsAMatch (clickedCardText, self){
     theCardVal = clickedCardText;
 
     //play audio sound
-    var audio = new Audio('tada.wav');
+    var audio = new Audio('sounds/tada.wav');
     audio.play();
 
     //todo Check for win (all cards are gone)
@@ -141,7 +142,7 @@ function itsAMatch (clickedCardText, self){
  */
 function notAMatch (){
     console.log('It did not match');
-    var audio = new Audio('no.mp3');
+    var audio = new Audio('sounds/no.mp3');
     audio.play();
 }
 
