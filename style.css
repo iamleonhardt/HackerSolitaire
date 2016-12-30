@@ -5,51 +5,92 @@ body {
     padding: 0;
 }
 
-#settings {
-    width: 100vw;
-    height: 8vh;
-}
-
 #gameArea {
     width: 100vw;
-    height: 92vh;
-}
-
-input {
-    height: 26px;
-    width: 120px;
-    margin: 10px 4px;
-    padding: 0 10px;
-}
-
-button {
-    height: 30px;
-    width: 140px;
-    margin: 10px;
-}
-
-.pile {
-    height: 100%;
-    width: 100px;
-    margin: 0 auto;
-    display: inline-block;
-    position:relative;
+    height: 100vh;
+    background-image: url('images/bg04.jpg');
+    background-size: cover;
 }
 
 .card {
     height: 120px;
     width: 80px;
-    background-color: aquamarine;
     display: inline-block;
-    font-size: 40px;
+    font-size: 60px;
     font-family: arial, sans-serif;
+    color: #FFFFE3;
+    line-height: 120px;
+}
+
+
+/* Opponent Section */
+#opponent {
+    width: 100vw;
+    height: 50%;
+}
+
+#rival {
+    height: 40%;
+}
+
+#piles {
+    height:60%;
+}
+
+.pile {
+    height: 84%;
+    width: 80px;
+    margin: 1%;
+    display: inline-block;
+    position:relative;
+}
+
+.cards {
     position: absolute;
-    border: 1px;
-    border-style: solid;
-    border-color: darkslategrey;
-
+    left: 0;
 }
 
-div:nth-child(odd) .card  {
-    background-color: aqua;
+
+
+
+/* Player Section */
+#playerArea{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 20%;
 }
+
+
+#theCard, #theDeck {
+    margin: 0 20px;
+}
+
+#theCard {
+    background-color: teal;
+}
+
+#theDeck {
+    background-color: deepskyblue;
+}
+
+
+
+
+/* Energy Types */
+.attack {
+    background-color: #111111;
+}
+
+.defense {
+    background-color: #333333;
+}
+
+.agility {
+    background-color: #666666;
+}
+
+.willpower{
+    background-color: #999999;
+}
+

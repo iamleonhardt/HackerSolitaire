@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hacker Solitaire</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
 
-<div id="settings">
-    <input type="text" placeholder="Number of Piles?" id="numOfPilesInput">
-    <input type="text" placeholder="Max Cards in Pile?" id="maxCardsInput">
-    <button id="createPileBtn">Create Piles</button>
-</div>
+<!--<div id="settings">-->
+    <!--<input type="text" placeholder="Number of Piles?" id="numOfPilesInput">-->
+    <!--<input type="text" placeholder="Max Cards in Pile?" id="maxCardsInput">-->
+    <!--<button id="createPileBtn">Create Piles</button>-->
+<!--</div>-->
 
 <div id="gameArea">
+    <div id="opponent">
+        <div id="rival"></div>
+        <div id="piles"></div>
+    </div>
+    <div id="playerArea">
+        <div class="card" id="theDeck"></div>
+        <div class="card" id="theCard"></div>
+    </div>
 
 </div>
 
