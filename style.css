@@ -5,37 +5,11 @@ body {
     padding: 0;
 }
 
-/*#settings {*/
-    /*width: 100vw;*/
-    /*height: 8vh;*/
-/*}*/
-
 #gameArea {
     width: 100vw;
     height: 100vh;
     background-image: url('images/bg04.jpg');
     background-size: cover;
-}
-
-input {
-    height: 26px;
-    width: 120px;
-    margin: 10px 4px;
-    padding: 0 10px;
-}
-
-button {
-    height: 30px;
-    width: 140px;
-    margin: 10px;
-}
-
-.pile {
-    height: 88%;
-    width: 100px;
-    margin: 5% auto;
-    display: inline-block;
-    position:relative;
 }
 
 .card {
@@ -44,13 +18,66 @@ button {
     display: inline-block;
     font-size: 60px;
     font-family: arial, sans-serif;
-    position: absolute;
-    /*border: 1px solid lightgrey;*/
     color: #FFFFE3;
     line-height: 120px;
-
 }
 
+
+/* Opponent Section */
+#opponent {
+    width: 100vw;
+    height: 50%;
+}
+
+#rival {
+    height: 40%;
+}
+
+#piles {
+    height:60%;
+}
+
+.pile {
+    height: 84%;
+    width: 80px;
+    margin: 1%;
+    display: inline-block;
+    position:relative;
+}
+
+.cards {
+    position: absolute;
+    left: 0;
+}
+
+
+
+
+/* Player Section */
+#playerArea{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 20%;
+}
+
+
+#theCard, #theDeck {
+    margin: 0 20px;
+}
+
+#theCard {
+    background-color: teal;
+}
+
+#theDeck {
+    background-color: deepskyblue;
+}
+
+
+
+
+/* Energy Types */
 .attack {
     background-color: #111111;
 }
