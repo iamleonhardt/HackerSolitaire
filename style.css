@@ -13,13 +13,13 @@ body {
 }
 
 .card {
-    height: 120px;
-    width: 80px;
+    height: 140px;
+    width: 100px;
     display: inline-block;
     font-size: 60px;
     font-family: arial, sans-serif;
     color: #FFFFE3;
-    line-height: 120px;
+    line-height: 140px;
 }
 
 
@@ -38,8 +38,7 @@ body {
 }
 
 .pile {
-    height: 84%;
-    width: 80px;
+    width: 100px;
     margin: 1%;
     display: inline-block;
     position:relative;
@@ -82,7 +81,7 @@ body {
 
 .resourceMeters {
     height: 120px;
-    width: 30px;
+    width: 58px;
     margin: 0 10px;
     display: inline-block;
     color: #ffffff;
