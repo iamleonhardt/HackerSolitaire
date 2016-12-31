@@ -7,13 +7,14 @@ var cardsInPileArr = [];
 var adjustedPosition = 0;
 
 //resources
+var playerHP = 20;
 var attackPool = 2;
 var defensePool = 8;
 var agilityPool = 5;
 var willpowerPool = 6;
 
 // var cardArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '(', ')', '{', '}'];
-var cardArr = ['1', '2', '3', '4'];
+var cardArr = ['1', '2', '3', '4', '5', '6', '7', '8'];
 var energyArr = ['attack', 'defense', 'agility', 'willpower'];
 
 var randomCard;
@@ -27,7 +28,6 @@ $(document).ready(function(){
     $('#theDeck').click(drawCard);
     drawCard();
     updateResourceDisplay();
-
 });
 
 /**
@@ -133,8 +133,10 @@ else if (theCardValIndex == (cardArr.length - 1)){
  * @param self
  */
 function itsAMatch (clickedCardText, self){
-    //delete clicked card
-    $(self).remove();
+    console.log('self is : ', self);
+
+    //increment energy pool
+    incrementEnergy();
 
     //replace the card with clicked card
     $('#theCard').text(clickedCardText);
@@ -144,18 +146,30 @@ function itsAMatch (clickedCardText, self){
     var audio = new Audio('sounds/cardMatched.mp3');
     audio.play();
 
+    //delete clicked card
+    $(self).remove();
+
     //todo Check for win (all cards are gone)
 }
 
+
+/**
+ * Updates the players resources
+ */
 function updateResourceDisplay(){
     for(var i = 0; i < energyArr.length; i++){
 
-        var energyDiv = $('<div>', {class: 'resourceMeters ' + energyArr[i], id: energyArr[i] + 'Meter'}).text(energyArr[i] + 'pool')
+        var energyDiv = $('<div>', {class: 'resourceMeters ' + energyArr[i], id: energyArr[i] + 'Meter'}).text(energyArr[i] + 'pool');
         //create div
         $('resourceMeterContainer').append();
-
     }
 }
+
+function incrementEnergy(energyPool){
+    energyPool++;
+}
+
+
 /**
  * If its not a match, play audio
  */
@@ -176,80 +190,3 @@ function displayWinner (){
 //todo fix theCard dom element
 //todo size game for mobile
 
-
-
-
-var boyName = 'simon';
-
-var petArr = [
-    'dog',
-    'cat',
-    'mouse',
-    'turtle',
-    'bunny'
-];
-
-//
-// var dog1 = {
-//     name: 'Mister Mc Fluffy Pants',
-//     furColor: 'brown',
-//     speak: function(){
-//         console.log('bow wow');
-//     },
-//     poop: function(){
-//         console.log('I pooped out jelly beans');
-//     }
-// };
-//
-//
-// var dog2 = {
-//     name: 'Ima Dog',
-//     furColor: 'brown',
-//     speak: function(){
-//         console.log('bow wow');
-//     },
-//     poop: function(){
-//         console.log('I pooped out jelly beans');
-//     }
-// };
-//
-//
-// var dog3 = {
-//     name: 'Imalso adog',
-//     furColor: 'black',
-//     speak: function(){
-//         console.log('bow wow');
-//     },
-//     poop: function(){
-//         console.log('I pooped out jelly beans');
-//     }
-// };
-
-
-
-function Dog (name){
-    this.name = name;
-    this.speak = function(){
-        console.log('bow wow');
-    };
-    this.poop = function(){
-        console.log('I pooped out jelly beans');
-    };
-    this.sniff = function(target){
-        // console.log('sniff');
-        console.log(this.name + ' sniffed ' + target + "\'s butt.");
-    };
-}
-
-var dogArr = ['Ima Dog', 'Snoop', 'Fluffers', 'Smucky smuch', 'Dogey Doge', 'Rex Kwon Doge'];
-
-for (var i = 0; i < dogArr.length; i++){
-    var thisDog = dogArr[i];
-    var thisDog = new Dog(dogArr[i])
-}
-
-
-//
-// var dog1 = new Dog('Ima Dog', 'Blurple');
-// var dog2 = new Dog('Doge', 'Unicornicopia');
-// var dog3 = new Dog('Snoop', 'Black');
