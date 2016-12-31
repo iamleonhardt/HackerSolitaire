@@ -28,6 +28,8 @@ $(document).ready(function(){
     $('#theDeck').click(rivalTurn);
     drawCard();
     updateResourceDisplay();
+    $('#playerHp').text(playerHp);
+
 });
 
 /**
