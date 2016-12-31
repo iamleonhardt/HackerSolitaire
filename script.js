@@ -7,7 +7,7 @@ var cardsInPileArr = [];
 var adjustedPosition = 0;
 
 //resources
-var playerHP = 20;
+var playerHp = 20;
 var attackPool = 2;
 var defensePool = 8;
 var agilityPool = 5;
@@ -25,7 +25,7 @@ var theCardVal = '';
  */
 $(document).ready(function(){
     createPiles();
-    $('#theDeck').click(drawCard);
+    $('#theDeck').click(rivalTurn);
     drawCard();
     updateResourceDisplay();
 });
@@ -74,7 +74,7 @@ function createPiles(){
 }
 
 /**
- * Assign new card to theCard
+ * Draw Card - Assign new card to theCard
  */
 function drawCard() {
     var theNum = makeRandomNum(cardArr.length);
@@ -83,6 +83,7 @@ function drawCard() {
 
     var audio = new Audio('sounds/drawCard.mp3');
     audio.play();
+
     //todo add sound when player draws a card
 }
 
@@ -165,10 +166,39 @@ function updateResourceDisplay(){
     }
 }
 
+/**
+ * Rivals Turn
+ */
+function rivalTurn(){
+    //remove hp
+    loseLife(1);
+
+    //warn player they were hit
+    if(playerHp < 5){
+        console.log('Rival hits you for 1 hp.  Time is running out!');
+    } else {
+        console.log('Rival hits you for 1 hp');
+    }
+
+    // draw new card
+    drawCard();
+}
+
 function incrementEnergy(energyPool){
     energyPool++;
 }
 
+
+function loseLife(amount){
+    playerHp -= amount;
+
+    //update hp dom
+    if (playerHp < 1){
+        playerHp = 'Loser';
+        $('#theDeck').remove();
+    }
+    $('#playerHp').text(playerHp);
+}
 
 /**
  * If its not a match, play audio
