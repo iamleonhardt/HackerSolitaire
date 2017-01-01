@@ -14,14 +14,18 @@
     <!--<input type="text" placeholder="Max Cards in Pile?" id="maxCardsInput">-->
     <!--<button id="createPileBtn">Create Piles</button>-->
 <!--</div>-->
-
+<video playsinline autoplay muted loop poster="images/backgrounds/bg05.jpg" id="bgvid">
+    <source src="images/backgrounds/bg.mp4" type="video/mp4">
+</video>
 <div id="gameArea">
     <div id="opponent">
         <div id="rival"></div>
         <div id="piles"></div>
     </div>
     <div id="playerArea">
-        <div class="playerHud" id="playerHp">HP</div>
+        <div class="playerHud" id="hpLabel">HP
+            <div id="playerHp"></div>
+        </div>
         <div class="card playerHud" id="theDeck"></div>
         <div class="card playerHud" id="theCard"></div>
         <div class="playerHud" id="resourceMeterContainer">
