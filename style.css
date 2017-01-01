@@ -3,13 +3,18 @@ body {
     font-size: 0;
     margin: 0;
     padding: 0;
+    cursor: url('images/cursors/cursor3.png'), default;
 }
 
 #gameArea {
     width: 100vw;
     height: 100vh;
-    background-image: url('images/bg04.jpg');
+    background-image: url('images/backgrounds/bg06.jpg');
     background-size: cover;
+}
+
+.playerHud {
+    vertical-align: top;
 }
 
 .card {
@@ -19,7 +24,10 @@ body {
     font-size: 60px;
     font-family: arial, sans-serif;
     color: #FFFFE3;
+    opacity: 0.6;
     line-height: 140px;
+    border-radius: 10px;
+    /*border: .5px solid #e3e3e3;*/
 }
 
 
@@ -75,11 +83,11 @@ body {
 }
 
 #theCard {
-    background-color: teal;
+    background-color: #141f21;
 }
 
 #theDeck {
-    background-color: deepskyblue;
+    background-color: #1b3743;
 }
 
 /* Resource Meters */
@@ -94,6 +102,8 @@ body {
     margin: 0 10px;
     display: inline-block;
     color: #ffffff;
+    opacity: 0.8;
+    border-radius: 4px;
     font-size: 18px;
     font-family: Roboto, sans-serif;
 }
@@ -125,7 +135,7 @@ body {
 }
 
 .defense {
-    background-color: #333333;
+    background-color: #001013;
 }
 
 .agility {
@@ -133,7 +143,7 @@ body {
 }
 
 .willpower{
-    background-color: #999999;
+    background-color: #061d27;
 }
 
 
