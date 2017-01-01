@@ -196,7 +196,7 @@ function loseLife(amount){
 
     //update hp dom
     if (playerHp < 1){
-        playerHp = 'Loser';
+        playerHp = 'X';
         $('#theDeck').remove();
     }
     $('#playerHp').text(playerHp);
